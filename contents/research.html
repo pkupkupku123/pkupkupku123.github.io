@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -63,84 +66,20 @@
     <script>
         function switchLanguage(lang) {
             document.documentElement.lang = lang;
-            const translations = {
-                zh: {
-                    title: '科研工作',
-                    description: '我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。',
-                    currentResearch: '当前研究',
-                    currentResearchDesc: '目前，我正在研究如何提高 LOSC 在 TDDFT 计算中的性能，并优化曲率计算。',
-                    publishedPapers: '已发表论文',
-                    home: '主页',
-                    research: '科研工作',
-                    notes: '笔记',
-                    contact: '联系我',
-                    paper1: '论文 1: [论文标题]',
-                    journal1: '期刊:',
-                    year1: '年份:',
-                    abstract1: '这里是论文摘要的简要介绍。',
-                    link1: '查看全文',
-                    paper2: '论文 2: [论文标题]',
-                    journal2: '期刊:',
-                    year2: '年份:',
-                    abstract2: '这里是论文摘要的简要介绍。',
-                    link2: '查看全文'
-                },
-                en: {
-                    title: 'Research',
-                    description: 'My research focuses on developing electronic structure methods and their applications in computational chemistry.',
-                    currentResearch: 'Current Research',
-                    currentResearchDesc: 'Currently, I am working on improving LOSC performance in TDDFT calculations and optimizing curvature calculations.',
-                    publishedPapers: 'Published Papers',
-                    home: 'Home',
-                    research: 'Research',
-                    notes: 'Notes',
-                    contact: 'Contact',
-                    paper1: 'Paper 1: [Paper Title]',
-                    journal1: 'Journal:',
-                    year1: 'Year:',
-                    abstract1: 'This is a brief summary of the paper.',
-                    link1: 'Read Full Text',
-                    paper2: 'Paper 2: [Paper Title]',
-                    journal2: 'Journal:',
-                    year2: 'Year:',
-                    abstract2: 'This is a brief summary of the paper.',
-                    link2: 'Read Full Text'
-                }
-            };
-            
-            const t = translations[lang];
-            document.getElementById('title').innerText = t.title;
-            document.getElementById('description').innerText = t.description;
-            document.getElementById('current-research').innerText = t.currentResearch;
-            document.getElementById('current-research-desc').innerText = t.currentResearchDesc;
-            document.getElementById('published-papers').innerText = t.publishedPapers;
-            
-            document.getElementById('home-link').innerText = t.home;
-            document.getElementById('research-link').innerText = t.research;
-            document.getElementById('notes-link').innerText = t.notes;
-            document.getElementById('contact-link').innerText = t.contact;
-            
-            document.getElementById('paper1-title').innerText = t.paper1;
-            document.getElementById('journal1').innerText = t.journal1;
-            document.getElementById('year1').innerText = t.year1;
-            document.getElementById('abstract1').innerText = t.abstract1;
-            document.getElementById('link1').innerText = t.link1;
-            
-            document.getElementById('paper2-title').innerText = t.paper2;
-            document.getElementById('journal2').innerText = t.journal2;
-            document.getElementById('year2').innerText = t.year2;
-            document.getElementById('abstract2').innerText = t.abstract2;
-            document.getElementById('link2').innerText = t.link2;
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                el.innerText = el.dataset[lang];
+            });
         }
     </script>
 </head>
 <body>
     <div class="navbar">
         <div class="nav-links">
-            <a id="home-link" href="../index.html">主页</a>
-            <a id="research-link" href="research.html">科研工作</a>
-            <a id="notes-link" href="notes.html">笔记</a>
-            <a id="contact-link" href="contact.html">联系我</a>
+            <a id="home-link" href="../index.html" data-lang-zh="主页" data-lang-en="Home">主页</a>
+            <a id="research-link" href="research.html" data-lang-zh="科研工作" data-lang-en="Research">科研工作</a>
+            <a id="notes-link" href="notes.html" data-lang-zh="笔记" data-lang-en="Notes">笔记</a>
+            <a id="contact-link" href="contact.html" data-lang-zh="联系我" data-lang-en="Contact">联系我</a>
         </div>
         <div class="language-switch">
             <button onclick="switchLanguage('zh')">中文</button>
@@ -149,19 +88,35 @@
     </div>
     
     <div class="container">
-        <h1 id="title">科研工作</h1>
-        <p id="description">我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。</p>
+        <h1 data-lang-zh="科研工作" data-lang-en="Research">科研工作</h1>
+        <p data-lang-zh="我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。" 
+           data-lang-en="My research focuses on developing electronic structure methods and their applications in computational chemistry.">
+           我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。
+        </p>
         
-        <h2 id="published-papers">已发表论文</h2>
+        <h2 data-lang-zh="已发表论文" data-lang-en="Published Papers">已发表论文</h2>
+        
         <div class="paper">
-            <h3 id="paper1-title">论文 1: [论文标题]</h3>
-            <p><strong id="journal1">期刊:</strong> [期刊名称]</p>
-            <p><strong id="year1">年份:</strong> [年份]</p>
-            <p id="abstract1">这里是论文摘要的简要介绍。</p>
-            <a id="link1" href="[论文链接]" target="_blank">查看全文</a>
+            <h3 data-lang-zh="论文 1: [论文标题]" data-lang-en="Paper 1: [Paper Title]">论文 1: [论文标题]</h3>
+            <p><strong data-lang-zh="期刊:" data-lang-en="Journal:">期刊:</strong> [期刊名称]</p>
+            <p><strong data-lang-zh="年份:" data-lang-en="Year:">年份:</strong> [年份]</p>
+            <p data-lang-zh="这里是论文摘要的简要介绍。" 
+               data-lang-en="This is a brief summary of the paper.">
+               这里是论文摘要的简要介绍。
+            </p>
+            <a href="[论文链接]" target="_blank" data-lang-zh="查看全文" data-lang-en="Read Full Text">查看全文</a>
+        </div>
+        
+        <div class="paper">
+            <h3 data-lang-zh="论文 2: [论文标题]" data-lang-en="Paper 2: [Paper Title]">论文 2: [论文标题]</h3>
+            <p><strong data-lang-zh="期刊:" data-lang-en="Journal:">期刊:</strong> [期刊名称]</p>
+            <p><strong data-lang-zh="年份:" data-lang-en="Year:">年份:</strong> [年份]</p>
+            <p data-lang-zh="这里是论文摘要的简要介绍。" 
+               data-lang-en="This is a brief summary of the paper.">
+               这里是论文摘要的简要介绍。
+            </p>
+            <a href="[论文链接]" target="_blank" data-lang-zh="查看全文" data-lang-en="Read Full Text">查看全文</a>
         </div>
     </div>
 </body>
 </html>
-
-
