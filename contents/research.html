@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研工作</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar .nav-links {
+            display: flex;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .language-switch {
+            margin-right: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 80px auto 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .paper {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="../index.html">主页</a>
+            <a href="research.html">科研工作</a>
+            <a href="notes.html">笔记</a>
+            <a href="contact.html">联系我</a>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('zh')">中文</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 id="title">科研工作</h1>
+        <p id="description">我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。</p>
+        
+        <h2>当前研究</h2>
+        <p>目前，我正在研究如何提高 LOSC 在 TDDFT 计算中的性能，并优化曲率计算。</p>
+        
+        <h2>已发表论文</h2>
+        <div class="paper" id="paper1">
+            <h3>论文 1: [论文标题]</h3>
+            <p><strong>期刊:</strong> [期刊名称]</p>
+            <p><strong>年份:</strong> [年份]</p>
+            <p><strong>摘要:</strong> 这里是论文摘要的简要介绍。</p>
+            <a href="[论文链接]" target="_blank">查看全文</a>
+        </div>
+        
+        <div class="paper" id="paper2">
+            <h3>论文 2: [论文标题]</h3>
+            <p><strong>期刊:</strong> [期刊名称]</p>
+            <p><strong>年份:</strong> [年份]</p>
+            <p><strong>摘要:</strong> 这里是论文摘要的简要介绍。</p>
+            <a href="[论文链接]" target="_blank">查看全文</a>
+        </div>
+    </div>
+</body>
+</html>
