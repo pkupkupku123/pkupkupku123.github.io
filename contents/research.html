@@ -60,14 +60,42 @@
             margin-bottom: 20px;
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'en') {
+                document.getElementById('title').innerText = 'Research';
+                document.getElementById('description').innerText = 'My research focuses on developing electronic structure methods and their applications in computational chemistry.';
+                document.getElementById('current-research').innerText = 'Current Research';
+                document.getElementById('current-research-desc').innerText = 'Currently, I am working on improving LOSC performance in TDDFT calculations and optimizing curvature calculations.';
+                document.getElementById('published-papers').innerText = 'Published Papers';
+                
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('research-link').innerText = 'Research';
+                document.getElementById('notes-link').innerText = 'Notes';
+                document.getElementById('contact-link').innerText = 'Contact';
+            } else {
+                document.getElementById('title').innerText = '科研工作';
+                document.getElementById('description').innerText = '我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。';
+                document.getElementById('current-research').innerText = '当前研究';
+                document.getElementById('current-research-desc').innerText = '目前，我正在研究如何提高 LOSC 在 TDDFT 计算中的性能，并优化曲率计算。';
+                document.getElementById('published-papers').innerText = '已发表论文';
+                
+                document.getElementById('home-link').innerText = '主页';
+                document.getElementById('research-link').innerText = '科研工作';
+                document.getElementById('notes-link').innerText = '笔记';
+                document.getElementById('contact-link').innerText = '联系我';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="navbar">
         <div class="nav-links">
-            <a href="../index.html">主页</a>
-            <a href="research.html">科研工作</a>
-            <a href="notes.html">笔记</a>
-            <a href="contact.html">联系我</a>
+            <a id="home-link" href="../index.html">主页</a>
+            <a id="research-link" href="research.html">科研工作</a>
+            <a id="notes-link" href="notes.html">笔记</a>
+            <a id="contact-link" href="contact.html">联系我</a>
         </div>
         <div class="language-switch">
             <button onclick="switchLanguage('zh')">中文</button>
@@ -79,10 +107,10 @@
         <h1 id="title">科研工作</h1>
         <p id="description">我的研究兴趣主要集中在电子结构方法的开发及其在计算化学中的应用。</p>
         
-        <h2>当前研究</h2>
-        <p>目前，我正在研究如何提高 LOSC 在 TDDFT 计算中的性能，并优化曲率计算。</p>
+        <h2 id="current-research">当前研究</h2>
+        <p id="current-research-desc">目前，我正在研究如何提高 LOSC 在 TDDFT 计算中的性能，并优化曲率计算。</p>
         
-        <h2>已发表论文</h2>
+        <h2 id="published-papers">已发表论文</h2>
         <div class="paper" id="paper1">
             <h3>论文 1: [论文标题]</h3>
             <p><strong>期刊:</strong> [期刊名称]</p>
@@ -101,3 +129,4 @@
     </div>
 </body>
 </html>
+
