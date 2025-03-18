@@ -19,6 +19,13 @@
             width: 100%;
             top: 0;
             left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar .nav-links {
+            display: flex;
         }
         .navbar a {
             color: white;
@@ -28,6 +35,9 @@
         }
         .navbar a:hover {
             background-color: #575757;
+        }
+        .language-switch {
+            margin-right: 20px;
         }
         .container {
             max-width: 800px;
@@ -41,18 +51,44 @@
             color: #333;
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'en') {
+                document.getElementById('title').innerText = 'Welcome to My Homepage';
+                document.getElementById('description').innerText = 'I am XXX, a PhD student in theoretical computational chemistry, specializing in electronic structure methods.';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('research-link').innerText = 'Research';
+                document.getElementById('notes-link').innerText = 'Notes';
+                document.getElementById('contact-link').innerText = 'Contact';
+            } else {
+                document.getElementById('title').innerText = '欢迎来到我的主页';
+                document.getElementById('description').innerText = '我是 XXX，一名理论计算化学博士研究生，研究方向是电子结构方法。';
+                document.getElementById('home-link').innerText = '主页';
+                document.getElementById('research-link').innerText = '科研工作';
+                document.getElementById('notes-link').innerText = '笔记';
+                document.getElementById('contact-link').innerText = '联系我';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">主页</a>
-        <a href="research.html">科研工作</a>
-        <a href="notes.html">笔记</a>
-        <a href="contact.html">联系我</a>
+        <div class="nav-links">
+            <a id="home-link" href="index.html">主页</a>
+            <a id="research-link" href="contents/research.html">科研工作</a>
+            <a id="notes-link" href="contents/notes.html">笔记</a>
+            <a id="contact-link" href="contents/contact.html">联系我</a>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('zh')">中文</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
     </div>
     
     <div class="container">
-        <h1>欢迎来到我的主页</h1>
-        <p>我是 XXX，一名理论计算化学博士研究生，研究方向是电子结构方法。</p>
+        <h1 id="title">欢迎来到我的主页</h1>
+        <p id="description">我是 XXX，一名理论计算化学博士研究生，研究方向是电子结构方法。</p>
     </div>
 </body>
 </html>
